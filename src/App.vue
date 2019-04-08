@@ -1,0 +1,56 @@
+<template>
+  <div id="app" ref="container" class="lv-container" 
+    :class="{'lv-fold':bfold}">
+    <TopSection>
+      <div slot="header">
+        <button @click="fold">Fold</button>
+      </div>
+    </TopSection>
+    <LeftSection>
+      <div slot="left">
+        <LeftMenu></LeftMenu>
+      </div>
+    </LeftSection>
+    <CenterSection></CenterSection>
+  </div>
+</template>
+
+<script>
+import TopSection from './components/TopSection'
+import LeftSection from './components/LeftSection'
+import CenterSection from './components/CenterSection'
+import LeftMenu from './components/LeftMenu'
+
+export default {
+  name: 'app',
+  data:function(){
+    return {
+      bfold:false
+    }
+  },
+  components: {
+    TopSection, LeftSection, CenterSection, LeftMenu
+  },
+  methods:{
+    fold(){
+      this.bfold = !this.bfold
+    }
+  }
+}
+</script>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+}
+html, body{
+  width:100%;
+  height:100%;
+  position:relative;
+}
+#app {
+  width:100%;
+  height:100%;
+}
+</style>
