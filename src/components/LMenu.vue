@@ -1,16 +1,15 @@
 <template>
-<div class="lv-left-menu">
-    <LeftMenuItem v-for="item in items" :key="item.title"
-        :item="item">
-    </LeftMenuItem>
+<div class="lv-lmenu">
+    <LMenuItem v-for="item in items" :key="item.title" :item="item">
+    </LMenuItem>
 </div>
 </template>
 
 <script>
-import LeftMenuItem from './LeftMenuItem'
+import LMenuItem from './LMenuItem'
 
-export default {
-    data:function(){
+export default{
+    data: function(){
         return {
             items:[
                 {icon:'fa fa-address-book', title:'book',
@@ -42,16 +41,6 @@ export default {
             ]
         }
     },
-    components:{
-        LeftMenuItem
-    }
+    components:{LMenuItem}
 }
 </script>
-
-<style>
-.lv-left-menu{
-    width:100%;
-    height:400px;
-    position:relative;
-}
-</style>

@@ -1,6 +1,6 @@
 <template>
 <div class="lv-left-section">
-    <slot name="left"></slot>
+    <slot name="menu"></slot>
 </div>
 </template>
 

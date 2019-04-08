@@ -7,8 +7,8 @@
       </div>
     </TopSection>
     <LeftSection>
-      <div slot="left">
-        <LeftMenu></LeftMenu>
+      <div slot="menu">
+        <LMenu></LMenu>
       </div>
     </LeftSection>
     <CenterSection></CenterSection>
@@ -19,7 +19,7 @@
 import TopSection from './components/TopSection'
 import LeftSection from './components/LeftSection'
 import CenterSection from './components/CenterSection'
-import LeftMenu from './components/LeftMenu'
+import LMenu from './components/LMenu'
 
 export default {
   name: 'app',
@@ -29,7 +29,7 @@ export default {
     }
   },
   components: {
-    TopSection, LeftSection, CenterSection, LeftMenu
+    TopSection, LeftSection, CenterSection, LMenu
   },
   methods:{
     fold(){

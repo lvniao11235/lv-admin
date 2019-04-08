@@ -2,6 +2,7 @@
 <div class="lv-left-menu-item" :class="hoverClass"
     @mouseenter="mouseEnter" @mouseleave="mouseLeave" @click="collapse">
     <div class="lv-left-menu-item-title">
+        <div class="lv-
         <div class="lv-left-menu-item-icon" :class="item.icon"></div>
         <div class="lv-left-menu-item-text">
             {{item.title}}
