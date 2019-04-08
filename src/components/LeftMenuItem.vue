@@ -1,7 +1,7 @@
 <template>
-<div class="lv-left-menu-item" 
-    @mouseenter="mouseEnter" @mouseleave="mouseLeave">
-    <div class="lv-left-menu-item-title"  @click="collapse">
+<div class="lv-left-menu-item" :class="hoverClass"
+    @mouseenter="mouseEnter" @mouseleave="mouseLeave" @click="collapse">
+    <div class="lv-left-menu-item-title">
         <div class="lv-left-menu-item-icon" :class="item.icon"></div>
         <div class="lv-left-menu-item-text">
             {{item.title}}
@@ -28,7 +28,8 @@ export default {
     },
     data:function(){
         return {
-            bcollapse:true
+            bcollapse:true,
+            hoverClass:''
         }
     },
     computed:{
@@ -63,10 +64,12 @@ export default {
         mouseEnter(){
             this.setHoverMenu(this.item.title);
             this.menuEventBus.$emit("mouseenter", this.item.title);
+            this.hoverClass = "lv-hover-menu";
         },
         mouseLeave(){
             this.setHoverMenu("");
             this.menuEventBus.$emit("mouseleave", this.item.title);
+            this.hoverClass = "";
         },
         menuItemMouseLeave(){
             if(this.currentMenu != this.item.title){
@@ -122,5 +125,27 @@ export default {
     height:40px;
     line-height:40px !important;
     vertical-align:middle;
+}
+
+.lv-fold .lv-left-menu-item{
+    width:60px;
+    height:40px;
+    overflow:hidden;
+}
+.lv-fold .lv-hover-menu{
+    width:200px;
+    background-color:gray;
+    overflow:visible;
+}
+.lv-fold .lv-hover-menu .lv-left-menu-item-text{
+    display:block;
+    float:right;
+}
+
+.lv-fold .lv-hover-menu .lv-left-sub-menu{
+    position:absolute;
+    margin-left:60px;
+    width:140px;
+    background-color:gray;
 }
 </style>

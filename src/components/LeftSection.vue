@@ -17,4 +17,8 @@ export default {
     float:left;
     background-color:gray;
 }
+
+.lv-fold .lv-left-section{
+    width:60px;
+}
 </style>

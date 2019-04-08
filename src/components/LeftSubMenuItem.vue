@@ -7,7 +7,14 @@
 
 <script>
 export default {
-    props:["item"]
+    props:["item"],
+    components:{
+    },
+    methods:{
+        showItems(){
+            return this.item.items && this.item.items.length>0;
+        },
+    }
 }
 </script>
 
@@ -29,7 +36,7 @@ export default {
 
 .lv-left-sub-menu-item-title{
     display:inline-block ;
-    width:calc(200px - 60px);
+    width:calc(100% - 60px);
     height:30px;
     line-height:30px;
     vertical-align:middle;

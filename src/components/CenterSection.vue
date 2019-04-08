@@ -15,4 +15,8 @@ export default {
     height:calc(100% - 60px);
     float:left;
 }
+
+.lv-fold .lv-center-section{
+    width:calc(100% - 60px);
+}
 </style>

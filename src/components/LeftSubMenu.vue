@@ -19,5 +19,6 @@ export default {
 
 <style>
 .lv-left-sub-menu{
+    width:100%;
 }
 </style>

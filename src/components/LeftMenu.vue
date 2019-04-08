@@ -28,6 +28,7 @@ export default {
                         {icon:'fa fa-circle-o', title:'band3'},
                     ]
                 },
+                {icon:'fa fa-address-card', title:'card2'},
             ]
         }
     },
