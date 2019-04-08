@@ -15,7 +15,12 @@ export default {
             items:[
                 {icon:'fa fa-address-book', title:'book',
                     items:[
-                        {icon:'fa fa-circle-o', title:'book1'},
+                        {icon:'fa fa-circle-o', title:'book1',
+                            items:[
+                                {icon:'fa fa-circle-o', title:'band11'},
+                                {icon:'fa fa-circle-o', title:'band22'},
+                                {icon:'fa fa-circle-o', title:'band33'},
+                        ]},
                         {icon:'fa fa-circle-o', title:'book2'},
                         {icon:'fa fa-circle-o', title:'book3'},
                     ]

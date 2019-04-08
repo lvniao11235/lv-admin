@@ -2,6 +2,9 @@
 <div class="lv-left-sub-menu-item">
     <div class="lv-left-sub-menu-item-icon" :class="item.icon"></div>
     <div class="lv-left-sub-menu-item-title">{{item.title}}</div>
+    <LeftSubMenu :items="item.items" 
+        v-if="showItems()">
+    </LeftSubMenu>
 </div>
 </template>
 
@@ -14,6 +17,9 @@ export default {
         showItems(){
             return this.item.items && this.item.items.length>0;
         },
+    },
+    beforeCreate(){
+        this.$options.components.LeftSubMenu = ()=>import('./LeftSubMenu.vue')
     }
 }
 </script>
