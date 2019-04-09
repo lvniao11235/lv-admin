@@ -119,6 +119,11 @@ html, body{
   color:#fff;
 }
 
+.lv-skin-blue .lv-user-panel-profile{
+  background-color:#3c8dbc;
+  color:#fff;
+}
+
 .lv-skin-green .lv-left-section,
 .lv-skin-green [menu-type='lv-top-lmenu'],
 .lv-skin-green [menu-type='lv-top-lmenu'] > .lv-lmenu-item-title > .lv-lmenu-item-text{

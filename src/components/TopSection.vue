@@ -12,6 +12,14 @@
                 <div class="fa fa-bell" slot="icon"></div>
                 <MessagePanel slot="panel"></MessagePanel>
             </FunctionItem>
+            <FunctionItem>
+                <div class="fa fa-tasks" slot="icon"></div>
+                <UserPanel slot="panel" style="display:block"></UserPanel>
+            </FunctionItem>
+            <FunctionItem>
+                <div class="fa fa-user" slot="icon"></div>
+                <UserPanel slot="panel" style="display:block"></UserPanel>
+            </FunctionItem>
         </div>
     </div>
 </div>
@@ -21,9 +29,10 @@
 import FunctionItem from './FunctionItem'
 import SkinPanel from './SkinPanel'
 import MessagePanel from './MessagePanel'
+import UserPanel from './UserPanel'
 import { mapState, mapMutations } from "vuex"
 export default {
-    components:{FunctionItem, SkinPanel, MessagePanel},
+    components:{FunctionItem, SkinPanel, MessagePanel, UserPanel},
     computed:{
         ...mapState({
             title: state=>state.config.title,
