@@ -2,7 +2,7 @@
 <div class="lv-lmenu-item" ref="menuitem" :menu-type="menutype" :class="{'lv-selected':bselected, 'lv-hover':bhover}" 
     @click="selected()" @mouseenter="mouseEnter" @mouseleave="mouseLeave" >
     <div class="lv-lmenu-item-title">
-        <div class="lv-lmenu-highlight"></div>
+        <div class="lv-lmenu-highlight" v-if="showHighlight"></div>
         <div class="lv-lmenu-item-icon" :class="item.icon"></div>
         <div class="lv-lmenu-item-text">
             {{item.title}}
@@ -24,6 +24,9 @@ export default{
         }
     },
     computed:{
+        showHighlight(){
+            return this.menutype == 'lv-top-lmenu';
+        },
         collapse(){
             if(this.menutype == 'lv-top-lmenu'){
                 return this.bselected || this.bhover;
@@ -41,9 +44,11 @@ export default{
         },
         mouseLeave(){
             this.bhover = false;
+            if(this.menutype == 'lv-top-lmenu'){
+                this.menuEventBus.$emit('removeSubmenuSelected');
+            }
         },
         selected(){
-            this.bselected = true;
             if(this.menutype == 'lv-top-lmenu'){
                 this.menuEventBus.$emit("topmenuSelectedChanged", this.item.title);
             } else {
@@ -54,7 +59,18 @@ export default{
             this.bselected = !(title != this.item.title)
         },
         submenuSelectedChnaged(title){
-            this.bselected = !(title != this.item.title)
+            if(title == this.item.title){
+                if(this.$refs.menuitem && this.$refs.menuitem.classList.contains('lv-selected')){
+                    this.bselected = false;
+                } else {
+                    this.bselected = true;     
+                }
+            } else {
+                this.bselected = false;
+            }
+        },
+        removeSubmenuSelected(){
+            this.bselected = false;
         }
     },
     inject:["menuEventBus"],
@@ -63,6 +79,7 @@ export default{
             this.menuEventBus.$on("topmenuSelectedChanged", this.topmenuSelectedChnaged);
         } else {
             this.menuEventBus.$on("submenuSelectedChanged", this.submenuSelectedChnaged);
+            this.menuEventBus.$on("removeSubmenuSelected", this.removeSubmenuSelected);
         }
     },
     beforeCreate(){
@@ -94,10 +111,6 @@ export default{
     height:100%;
 }
 
-.lv-selected .lv-lmenu-highlight,
-.lv-hover .lv-lmenu-highlight{
-    background-color:red;
-}
 .lv-lmenu-item-icon{
     width:54px;
     height:40px;
@@ -127,10 +140,18 @@ export default{
     font-size:30px !important;
 }
 
+div[menu-type='lv-top-lmenu'] > .lv-lmenu,
+div[menu-type='lv-sub-lmenu'] > .lv-lmenu{
+    padding-left:20px;
+}
+div[menu-type='lv-sub-lmenu'] .lv-lmenu-item-title{
+    height:30px !important;
+}
 div[menu-type='lv-sub-lmenu'] .lv-lmenu-item-collapse,
+div[menu-type='lv-sub-lmenu'] .lv-lmenu-highlight,
 div[menu-type="lv-sub-lmenu"] .lv-lmenu-item-icon,
 div[menu-type="lv-sub-lmenu"] .lv-lmenu-item-text{
-    height:30px;
+    height:30px !important;
     line-height:30px !important;
     font-size:20px !important;
 }
@@ -145,4 +166,30 @@ div[menu-type="lv-sub-lmenu"].lv-selected > .lv-lmenu > div[menu-type="lv-sub-lm
     display:block;
 }
 
+.lv-fold div[menu-type='lv-top-lmenu'] > .lv-lmenu{
+    position:absolute;
+    margin-left:60px;
+    padding-left:0px;
+    width:140px;
+}
+
+.lv-fold div[menu-type='lv-sub-lmenu'] > .lv-lmenu{
+    position:absolute;
+    margin-left:140px;
+    width:140px;
+    margin-top:-30px;
+}
+
+.lv-fold div[menu-type="lv-top-lmenu"].lv-hover > .lv-lmenu-item-title{
+    overflow:visible;
+    width:200px;
+}
+
+.lv-fold div[menu-type="lv-top-lmenu"] > .lv-lmenu > div[menu-type="lv-sub-lmenu"]{
+    display:none !important;
+}
+
+.lv-fold div[menu-type="lv-top-lmenu"].lv-hover > .lv-lmenu > div[menu-type="lv-sub-lmenu"]{
+    display:block !important;
+}
 </style>
