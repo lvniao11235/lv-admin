@@ -28,10 +28,6 @@ export default {
           items:[
             {icon:'fa fa-circle', title:'基本表格', addr:'/basetable'},
             {icon:'fa fa-circle', title:'数据表格', addr:'/datatable'},
-            {icon:'fa fa-circle', title:'table1', addr:'/table1'},
-            {icon:'fa fa-circle', title:'table2', addr:'/table2'},
-            {icon:'fa fa-circle', title:'table3', addr:'/table3'},
-            {icon:'fa fa-circle', title:'table4', addr:'/table4'}
           ]
         }
       ]

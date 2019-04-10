@@ -6,7 +6,6 @@
                 :item="item" :key="item.addr"
                 :class="{'lv-selected':item.addr == currentItem.addr}">
             </TabControlHeadItem>
-            
         </div>
         <div class="lv-tabcontrol-head-btns">
             <div @click="selectPrevious($event)" class="fa fa-angle-left"></div>
@@ -20,6 +19,7 @@
         </div>
     </div>
     <div class="lv-tabcontrol-body">
+        <router-view></router-view>
     </div>
 </div>
 </template>
@@ -62,6 +62,7 @@ export default{
         },
         setCurrentItem(item){
             this.currentItem = item;
+            this.$router.push(this.currentItem.addr);
             this.$refs.headitems.style.width = (this.items.length * 200) + 'px';
             var index = this.items.findIndex(p=>p.addr == item.addr);
             var width = 0;
@@ -128,6 +129,12 @@ export default{
     overflow:hidden;
 }
 
+.lv-tabcontrol-body{
+    width:100%;
+    height:calc(100% - 41px);
+    position:relative;
+}
+
 .lv-tabcontrol-head-items{
     display:inline-block;
     overflow:hidden;
@@ -192,5 +199,11 @@ export default{
 .lv-tabcontrol-head-options-panel-item:last-child{
     border-bottom-left-radius:5px;
     border-bottom-right-radius:5px;
+}
+
+.lv-tabcontol-content{
+    height:100%;
+    width:100%;
+    position:relative;
 }
 </style>
