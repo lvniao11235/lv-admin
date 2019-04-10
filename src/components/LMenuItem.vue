@@ -49,6 +49,9 @@ export default{
             }
         },
         selected(){
+            if(this.item.addr){
+                this.tabEventBus.$emit('openNewTab', this.item);
+            }
             if(this.menutype == 'lv-top-lmenu'){
                 this.menuEventBus.$emit("topmenuSelectedChanged", this.item.title);
             } else {
@@ -73,7 +76,7 @@ export default{
             this.bselected = false;
         }
     },
-    inject:["menuEventBus"],
+    inject:["menuEventBus", "tabEventBus"],
     created(){
         if(this.menutype == 'lv-top-lmenu'){
             this.menuEventBus.$on("topmenuSelectedChanged", this.topmenuSelectedChnaged);

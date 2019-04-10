@@ -78,7 +78,7 @@ export default{
         padding-left:10px;
     }
 
-    .lv-message-panel-item:last{
+    .lv-message-panel-item::last-child{
         border-bottom:none;
     }
 

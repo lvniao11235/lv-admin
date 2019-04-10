@@ -11,7 +11,8 @@ new Vue({
   store,
   provide:function(){
     return {
-      menuEventBus:new Vue()
+      menuEventBus:new Vue(),
+      tabEventBus:new Vue()
     }
   }
 }).$mount('#app')

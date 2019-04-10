@@ -5,7 +5,10 @@
         <div class="lv-function-item fa fa-navicon" @click="foldClick"></div>
         <div class="lv-function-items">
             <FunctionItem>
-                <div class="fa fa-gears" slot="icon"></div>
+                <div class="fa fa-arrows-alt" slot="icon" @click="screenfullToggle"></div>
+            </FunctionItem>
+            <FunctionItem>
+                <div class="fa fa-gears" slot="icon" ></div>
                 <SkinPanel slot="panel"></SkinPanel>
             </FunctionItem>
             <FunctionItem>
@@ -14,7 +17,7 @@
             </FunctionItem>
             <FunctionItem>
                 <div class="fa fa-tasks" slot="icon"></div>
-                <UserPanel slot="panel" style="display:block"></UserPanel>
+                <TaskPanel slot="panel" style="display:block"></TaskPanel>
             </FunctionItem>
             <FunctionItem>
                 <div class="fa fa-user" slot="icon"></div>
@@ -30,9 +33,11 @@ import FunctionItem from './FunctionItem'
 import SkinPanel from './SkinPanel'
 import MessagePanel from './MessagePanel'
 import UserPanel from './UserPanel'
+import TaskPanel from './TaskPanel'
+import screenfull from 'screenfull'
 import { mapState, mapMutations } from "vuex"
 export default {
-    components:{FunctionItem, SkinPanel, MessagePanel, UserPanel},
+    components:{FunctionItem, SkinPanel, MessagePanel, UserPanel, TaskPanel},
     computed:{
         ...mapState({
             title: state=>state.config.title,
@@ -49,6 +54,9 @@ export default {
         }),
         foldClick(){
             this.setFold(this.fold ? false:true);
+        },
+        screenfullToggle(){
+            screenfull.toggle();
         }
     }
 }

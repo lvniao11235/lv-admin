@@ -20,6 +20,8 @@ export default{
         display:none;
         width:200px;
         background-color:#fff;
+        z-index:100;
+        position:relative;
     }
 
     .lv-function-item:hover > .lv-function-item-panel{
