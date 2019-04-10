@@ -29,6 +29,12 @@ export default {
             {icon:'fa fa-circle', title:'基本表格', addr:'/basetable'},
             {icon:'fa fa-circle', title:'数据表格', addr:'/datatable'},
           ]
+        },
+        {icon:'fa fa-edit', title:'编辑器',
+          items:[
+            {icon:'fa fa-circle', title:'富文本', addr:'/texteditor'},
+            {icon:'fa fa-circle', title:'Markdown', addr:'/mdeditor'},
+          ]
         }
       ]
     }

@@ -18,3 +18,9 @@ export default{
     components:{LMenuItem}
 }
 </script>
+
+<style>
+.lv-lmenu, .lv-lmenu-item, .lv-lmenu-item-title{
+    z-index:10000;
+}
+</style>

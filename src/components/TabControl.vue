@@ -180,6 +180,7 @@ export default{
 
 .lv-tabcontrol-head-options:hover .lv-tabcontrol-head-options-panel{
     display:block;
+    z-index:10000;
 }
 
 .lv-tabcontrol-head-options-panel-item{
@@ -205,5 +206,6 @@ export default{
     height:100%;
     width:100%;
     position:relative;
+    overflow:auto;
 }
 </style>

@@ -92,13 +92,16 @@ export default{
 </script>
 
 <style>
+.lv-fold div[menu-type='lv-sub-lmenu'] .lv-lmenu-item-icon{
+    width:30px;
+}
 .lv-lmenu-item-title{
     width:100%;
     height:40px;
     line-height:40px !important;
     vertical-align:middle;
     text-align:center;
-    font-size:30px !important;
+    font-size:20px !important;
     position:relative;
 }
 
@@ -121,7 +124,7 @@ export default{
     line-height:40px !important;
     vertical-align:middle;
     text-align:center;
-    font-size:30px !important;
+    font-size:20px !important;
 }
 
 .lv-lmenu-item-text{
@@ -156,7 +159,7 @@ div[menu-type="lv-sub-lmenu"] .lv-lmenu-item-icon,
 div[menu-type="lv-sub-lmenu"] .lv-lmenu-item-text{
     height:30px !important;
     line-height:30px !important;
-    font-size:20px !important;
+    font-size:14px !important;
 }
 
 div[menu-type="lv-sub-lmenu"]{
@@ -175,6 +178,8 @@ div[menu-type="lv-sub-lmenu"].lv-selected > .lv-lmenu > div[menu-type="lv-sub-lm
     padding-left:0px;
     width:140px;
 }
+
+
 
 .lv-fold div[menu-type='lv-sub-lmenu'] > .lv-lmenu{
     position:absolute;
