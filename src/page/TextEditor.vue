@@ -1,7 +1,7 @@
 <template>
 <div class="lv-tabcontol-content lv-texteditor-component">
     <quill-editor class="lv-editor" ref="myTextEditor" v-model="content" :options="editorOption"></quill-editor>
-    <div style="clear:both;margin-top:90px;">
+    <div style="clear:both;margin-top:120px;">
         <button @click="submit">click</button>
     </div>
 </div>
@@ -24,7 +24,6 @@ export default{
     components: {quillEditor},
     methods: {
         submit(){
-            console.log(this.content);
         }
     }
 }

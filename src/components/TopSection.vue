@@ -1,9 +1,13 @@
 <template>
 <div class="lv-top-section">
+    <LockScreen ref="lockscreen"></LockScreen>
     <div class="lv-logo">{{logo}}</div>
     <div class="lv-function">
         <div class="lv-function-item fa fa-navicon" @click="foldClick"></div>
         <div class="lv-function-items">
+            <FunctionItem>
+                <div title="锁屏" class="fa fa-lock" slot="icon" @click="lockScrren"></div>
+            </FunctionItem>
             <FunctionItem>
                 <div class="fa fa-arrows-alt" slot="icon" @click="screenfullToggle"></div>
             </FunctionItem>
@@ -29,6 +33,7 @@
 </template>
 
 <script>
+import LockScreen from './LockScreen'
 import FunctionItem from './FunctionItem'
 import SkinPanel from './SkinPanel'
 import MessagePanel from './MessagePanel'
@@ -37,7 +42,7 @@ import TaskPanel from './TaskPanel'
 import screenfull from 'screenfull'
 import { mapState, mapMutations } from "vuex"
 export default {
-    components:{FunctionItem, SkinPanel, MessagePanel, UserPanel, TaskPanel},
+    components:{LockScreen, FunctionItem, SkinPanel, MessagePanel, UserPanel, TaskPanel},
     computed:{
         ...mapState({
             title: state=>state.config.title,
@@ -57,6 +62,9 @@ export default {
         },
         screenfullToggle(){
             screenfull.toggle();
+        },
+        lockScrren(){
+            this.$refs.lockscreen.$el.style.display = "block";    
         }
     }
 }

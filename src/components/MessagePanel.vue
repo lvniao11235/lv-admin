@@ -1,5 +1,5 @@
 <template>
-<div class="lv-message-panel">
+<div class="lv-function-panel-item-content lv-message-panel">
     <div class="lv-message-panel-title">You have 10 notivications</div>
     <div class="lv-message-panel-items">
         <div class="lv-message-panel-item">

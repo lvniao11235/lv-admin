@@ -27,7 +27,6 @@ export default {
         {icon:'fa fa-table', title:'表格', 
           items:[
             {icon:'fa fa-circle', title:'基本表格', addr:'/basetable'},
-            {icon:'fa fa-circle', title:'数据表格', addr:'/datatable'},
           ]
         },
         {icon:'fa fa-edit', title:'编辑器',

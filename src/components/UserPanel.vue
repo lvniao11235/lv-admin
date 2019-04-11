@@ -1,5 +1,5 @@
 <template>
-<div class="lv-user-panel">
+<div class="lv-function-panel-item-content lv-user-panel">
     <div class="lv-user-panel-profile">
         <div class="lv-user-profile-img">
             <img src="../assets/logo.png"/>

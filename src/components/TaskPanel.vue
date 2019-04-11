@@ -1,5 +1,5 @@
 <template>
-<div class="lv-task-panel">
+<div class="lv-function-panel-item-content lv-task-panel">
     <div class="lv-task-panel-title">Your task list</div>
     <div class="lv-task-panel-items">
         <div class="lv-task-panel-item">

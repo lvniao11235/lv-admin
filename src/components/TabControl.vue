@@ -63,7 +63,7 @@ export default{
         setCurrentItem(item){
             this.currentItem = item;
             this.$router.push(this.currentItem.addr);
-            this.$refs.headitems.style.width = (this.items.length * 200) + 'px';
+            this.$refs.headitems.$el.style.width = (this.items.length * 200) + 'px';
             var index = this.items.findIndex(p=>p.addr == item.addr);
             var width = 0;
             for(var i=0; i<index; i++){

@@ -1,5 +1,5 @@
 <template>
-<div class="lv-skin-panel">
+<div class="lv-function-panel-item-content lv-skin-panel">
     <h1>Skins</h1>
     <div class="lv-skin-items">
         <div class="lv-skin-item" @click="selectSkin(skin)"
