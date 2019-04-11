@@ -72,7 +72,12 @@ export default{
                                 }]
                              },
                              {field: 'hobby', title: '爱好', width: 150, titleAlign: 'center',columnAlign:'center',isEdit:true,isResize:true},
-                             {field: 'address', title: '地址', width: 280, titleAlign: 'center',columnAlign:'left',isEdit:true,isResize:true}
+                             {field: 'address', title: '地址', width: 250, titleAlign: 'center',columnAlign:'left',isEdit:true,isResize:true},
+                             {field: 'options', title: '操作', width: 100, titleAlign: 'center',columnAlign:'center',
+                             formatter: function (rowData) {
+
+                                   return '<button title=' + rowData.name + '>edit</button><button style="margin-left:10px;" title=' + rowData.tel + '>delete</button>';
+                               }}
                 ]
         }
     }
