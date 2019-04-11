@@ -56,9 +56,12 @@ export default{
             event.cancelBubble = true;
         },
         closeOther(event){
-            this.items = [this.currentItem];
-            this.setCurrentItem(this.currentItem);
-            event.cancelBubble = true;
+            if(this.items && this.hasOwnProperty('length') && this.itmes.length != 0){
+                this.items = [this.currentItem];
+                this.setCurrentItem(this.currentItem);
+                event.cancelBubble = true;
+            }
+            
         },
         setCurrentItem(item){
             this.currentItem = item;
@@ -207,5 +210,6 @@ export default{
     width:100%;
     position:relative;
     overflow:auto;
+    background-color:#ecf0f5;
 }
 </style>

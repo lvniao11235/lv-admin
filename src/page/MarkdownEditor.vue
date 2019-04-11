@@ -42,7 +42,6 @@ export default{
             this.html = render;
         },
         submit(){
-            console.log(this.content);
         }
     }
 }
