@@ -6,6 +6,9 @@ Vue.config.productionTip = false
 import "font-awesome/css/font-awesome.min.css"
 import store from './store'
 import router from './router'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(ElementUI);
 
 new Vue({
   render: h => h(App),

@@ -7,7 +7,7 @@
         :cell-edit-done="cellEditDone"
         :multiple-sort="multipleSort">
     </v-table>
-    <VPagination @page-change="pageChange" @page-size-change="pageSizeChange" :total="50" :page-size="pageSize" :layout="['total', 'prev', 'pager', 'next', 'sizer', 'jumper']"></VPagination>
+    <VPagination></VPagination>
 </div>
 </template>
 

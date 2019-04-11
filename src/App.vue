@@ -34,7 +34,8 @@ export default {
             {icon:'fa fa-circle', title:'富文本', addr:'/texteditor'},
             {icon:'fa fa-circle', title:'Markdown', addr:'/mdeditor'},
           ]
-        }
+        },
+        {icon:'fa fa-th-list', title:'布局', addr:'/baselayout'}
       ]
     }
   },

@@ -62,19 +62,19 @@ export default{
         },
         setCurrentItem(item){
             this.currentItem = item;
-            this.$router.push(this.currentItem.addr);
-            this.$refs.headitems.$el.style.width = (this.items.length * 200) + 'px';
-            var index = this.items.findIndex(p=>p.addr == item.addr);
-            var width = 0;
-            for(var i=0; i<index; i++){
-                width = width + this.$refs.tabitems[i].$el.clientWidth + 5;
-            }
-            if(width > this.$refs.tabcontrol.clientWidth - 200){
-                this.$refs.headitems.style.marginLeft = 
-                    (-1*(width - this.$refs.tabcontrol.clientWidth + 200)) + 'px'
-            } else {
-                this.$refs.headitems.style.marginLeft = "0px";
-            }
+                this.$router.push(this.currentItem.addr);
+                this.$refs.headitems.style.width = (this.items.length * 200) + 'px';
+                var index = this.items.findIndex(p=>p.addr == item.addr);
+                var width = 0;
+                for(var i=0; i<index; i++){
+                    width = width + this.$refs.tabitems[i].$el.clientWidth + 5;
+                }
+                if(width > this.$refs.tabcontrol.clientWidth - 200){
+                    this.$refs.headitems.style.marginLeft = 
+                        (-1*(width - this.$refs.tabcontrol.clientWidth + 200)) + 'px'
+                } else {
+                    this.$refs.headitems.style.marginLeft = "0px";
+                }
         },
         openNewTab(item){
             if(this.items.findIndex(p=>p.addr == item.addr) == -1){
