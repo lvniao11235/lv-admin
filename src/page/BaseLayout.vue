@@ -2,100 +2,86 @@
 <div class="lv-tabcontol-content lv-baselayout-component">
     <el-row :gutter="20">
         <el-col :span="6">
-            <div class="grid-content bg-purple">
-                <div class="lv-info-block">
-                    <div class="lv-info-block-icon fa fa-bell" style="background-color:#00c0ef">
-                    </div>
-                    <div class="lv-info-block-text">
-                        <h1 style="color:#00c0ef">10</h1>
-                        <h4>系统通知</h4>
-                    </div>
+            <div class="lv-info-block">
+                <div class="lv-info-block-icon fa fa-bell" style="background-color:#00c0ef">
+                </div>
+                <div class="lv-info-block-text">
+                    <h1 style="color:#00c0ef">10</h1>
+                    <h4>系统通知</h4>
                 </div>
             </div>
         </el-col>
         <el-col :span="6">
-            <div class="grid-content bg-purple">
-                <div class="lv-info-block">
-                    <div class="lv-info-block-icon fa fa-tasks" style="background-color:#dd4b39">
-                    </div>
-                    <div class="lv-info-block-text">
-                        <h1 style="color:#dd4b39">10</h1>
-                        <h4>当前任务数</h4>
-                    </div>
+            <div class="lv-info-block">
+                <div class="lv-info-block-icon fa fa-tasks" style="background-color:#dd4b39">
+                </div>
+                <div class="lv-info-block-text">
+                    <h1 style="color:#dd4b39">10</h1>
+                    <h4>当前任务数</h4>
                 </div>
             </div>
         </el-col>
         <el-col :span="6">
-            <div class="grid-content bg-purple">
-                <div class="lv-info-block">
-                    <div class="lv-info-block-icon fa fa-user" style="background-color:#00a65a">
-                    </div>
-                    <div class="lv-info-block-text">
-                        <h1 style="color:#00a65a">10</h1>
-                        <h4>员工人数</h4>
-                    </div>
+            <div class="lv-info-block">
+                <div class="lv-info-block-icon fa fa-user" style="background-color:#00a65a">
+                </div>
+                <div class="lv-info-block-text">
+                    <h1 style="color:#00a65a">10</h1>
+                    <h4>员工人数</h4>
                 </div>
             </div>
         </el-col>
         <el-col :span="6">
-            <div class="grid-content bg-purple">
-                <div class="lv-info-block">
-                    <div class="lv-info-block-icon fa fa-envelope" style="background-color:#f39c12">
-                    </div>
-                    <div class="lv-info-block-text">
-                        <h1 style="color:#f39c12">10</h1>
-                        <h4>未处理消息</h4>
-                    </div>
+            <div class="lv-info-block">
+                <div class="lv-info-block-icon fa fa-envelope" style="background-color:#f39c12">
+                </div>
+                <div class="lv-info-block-text">
+                    <h1 style="color:#f39c12">10</h1>
+                    <h4>未处理消息</h4>
                 </div>
             </div>
         </el-col>
     </el-row>
     <el-row :gutter="20">
         <el-col :span="24">
-            <div class="grid-content bg-purple">
-                <ContentPanel style="height:100px;margin-top:20px;"></ContentPanel>
-            </div>
+            <ContentPanel style="height:100px;margin-top:20px;"></ContentPanel>
         </el-col>
     </el-row>
     <el-row :gutter="20">
         <el-col :span="18">
-            <div class="grid-content bg-purple">
-                <ContentPanel style="height:460px;margin-top:20px;" :title="'窗体'" :icon="'fa fa-slideshare'"></ContentPanel>
-            </div>
+            <ContentPanel style="height:460px;margin-top:20px;" :title="'窗体'" :icon="'fa fa-slideshare'"></ContentPanel>
         </el-col>
         <el-col :span="6">
-            <div class="grid-content bg-purple">
-                <div class="lv-info-block" style="margin-top:20px;">
-                    <div class="lv-info-block-icon fa fa-bell" style="background-color:#00c0ef">
-                    </div>
-                    <div class="lv-info-block-text">
-                        <h1 style="color:#00c0ef">10</h1>
-                        <h4>系统通知</h4>
-                    </div>
+            <div class="lv-info-block" style="margin-top:20px;">
+                <div class="lv-info-block-icon fa fa-bell" style="background-color:#00c0ef">
                 </div>
-                <div class="lv-info-block" style="margin-top:20px;">
-                    <div class="lv-info-block-icon fa fa-tasks" style="background-color:#dd4b39">
-                    </div>
-                    <div class="lv-info-block-text">
-                        <h1 style="color:#dd4b39">10</h1>
-                        <h4>当前任务数</h4>
-                    </div>
+                <div class="lv-info-block-text">
+                    <h1 style="color:#00c0ef">10</h1>
+                    <h4>系统通知</h4>
                 </div>
-                <div class="lv-info-block" style="margin-top:20px;">
-                    <div class="lv-info-block-icon fa fa-user" style="background-color:#00a65a">
-                    </div>
-                    <div class="lv-info-block-text">
-                        <h1 style="color:#00a65a">10</h1>
-                        <h4>员工人数</h4>
-                    </div>
+            </div>
+            <div class="lv-info-block" style="margin-top:20px;">
+                <div class="lv-info-block-icon fa fa-tasks" style="background-color:#dd4b39">
                 </div>
-                <div class="lv-info-block" style="margin-top:20px;">
-                    <div class="lv-info-block-icon fa fa-envelope" style="background-color:#f39c12">
-                    </div>
-                    <div class="lv-info-block-text">
-                        <h1 style="color:#f39c12">10</h1>
-                        <h4>未处理消息</h4>
-                    </div>
+                <div class="lv-info-block-text">
+                    <h1 style="color:#dd4b39">10</h1>
+                    <h4>当前任务数</h4>
+                </div>
+            </div>
+            <div class="lv-info-block" style="margin-top:20px;">
+                <div class="lv-info-block-icon fa fa-user" style="background-color:#00a65a">
+                </div>
+                <div class="lv-info-block-text">
+                    <h1 style="color:#00a65a">10</h1>
+                    <h4>员工人数</h4>
+                </div>
+            </div>
+            <div class="lv-info-block" style="margin-top:20px;">
+                <div class="lv-info-block-icon fa fa-envelope" style="background-color:#f39c12">
+                </div>
+                <div class="lv-info-block-text">
+                    <h1 style="color:#f39c12">10</h1>
+                    <h4>未处理消息</h4>
                 </div>
             </div>
         </el-col>

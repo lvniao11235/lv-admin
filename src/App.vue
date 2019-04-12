@@ -35,7 +35,8 @@ export default {
             {icon:'fa fa-circle', title:'Markdown', addr:'/mdeditor'},
           ]
         },
-        {icon:'fa fa-th-list', title:'布局', addr:'/baselayout'}
+        {icon:'fa fa-th-list', title:'布局', addr:'/baselayout'},
+        {icon:'fa fa-cogs', title:'表单', addr:'/form'}
       ]
     }
   },

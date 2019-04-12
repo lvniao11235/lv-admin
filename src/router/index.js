@@ -5,6 +5,7 @@ import BaseTable from "../page/BaseTable";
 import BaseLayout from "../page/BaseLayout";
 import MarkdownEditor from "../page/MarkdownEditor";
 import TextEditor from "../page/TextEditor";
+import FormDemo from "../page/FormDemo.vue";
 Vue.use(VueRouter);
 
 export default new VueRouter({
@@ -13,6 +14,7 @@ export default new VueRouter({
         {path:"/basetable", component:BaseTable},
         {path:"/baselayout", component:BaseLayout},
         {path:"/texteditor", component:TextEditor},
-        {path:"/mdeditor", component:MarkdownEditor}
+        {path:"/mdeditor", component:MarkdownEditor},
+        {path:"/form", component:FormDemo}
     ]
 })
