@@ -101,6 +101,9 @@ export default{
                     this.setCurrentItem(this.items[index-1]);
                 }
             }
+            if(this.items.length == 0){
+                this.tabEventBus.$emit('openNewTab', {addr:"/home", title:"首页"});
+            }
         },
         tabSelectChanged(item){
             this.setCurrentItem(item);

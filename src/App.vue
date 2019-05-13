@@ -18,32 +18,18 @@ import LeftSection from './components/LeftSection'
 import CenterSection from './components/CenterSection'
 import LMenu from './components/LMenu'
 import { mapState} from "vuex"
-
 export default {
   name: 'app',
   data:function(){
     return {
-      items:[
-        {icon:'fa fa-table', title:'表格', 
-          items:[
-            {icon:'fa fa-circle', title:'基本表格', addr:'/basetable'},
-          ]
-        },
-        {icon:'fa fa-edit', title:'编辑器',
-          items:[
-            {icon:'fa fa-circle', title:'富文本', addr:'/texteditor'},
-            {icon:'fa fa-circle', title:'Markdown', addr:'/mdeditor'},
-          ]
-        },
-        {icon:'fa fa-th-list', title:'布局', addr:'/baselayout'},
-        {icon:'fa fa-cogs', title:'表单', addr:'/form'}
-      ]
     }
   },
   computed:{
         ...mapState({
             fold: state=>state.config.fold,
-            currentSkin: state=>state.config.currentSkin
+            currentSkin: state=>state.config.currentSkin,
+            items:state=>state.config.menus,
+            links:state=>state.config.links
         }),
         skin(){
           return this.currentSkin.classname;
@@ -53,6 +39,44 @@ export default {
     TopSection, LeftSection, CenterSection, LMenu
   },
   methods:{
+  },
+  inject:["tabEventBus"],
+  mounted(){
+    if(this.$route.path != '/'){
+      var flag = false;
+      var item = null;
+      for(var i=0; i<this.items.length; i++){
+        if(this.items[i].addr == this.$route.path){
+          item = this.items[i];
+          flag = true;
+          break;
+        }
+        if(this.items[i].items && this.items[i].items.length > 0){
+          for(var j=0; j<this.items[i].items.length; j++){
+            if(this.items[i].items[j].addr == this.$route.path){
+              item = this.items[i].items[j];
+              flag = true;
+              break;
+            }
+          }
+          if(flag == true){
+            break;
+          }
+        }
+      }
+      if(flag){
+        this.tabEventBus.$emit('openNewTab', item);
+      }
+      else 
+      {
+        for(i=0; i<this.links.length; i++){
+          if(this.links[i].addr == this.$route.path){
+            this.tabEventBus.$emit('openNewTab', this.links[i]);
+            break;
+          }
+        }
+      }
+    }
   }
 }
 </script>

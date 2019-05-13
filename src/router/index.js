@@ -6,15 +6,19 @@ import BaseLayout from "../page/BaseLayout";
 import MarkdownEditor from "../page/MarkdownEditor";
 import TextEditor from "../page/TextEditor";
 import FormDemo from "../page/FormDemo.vue";
+import Home from "../page/Home";
 Vue.use(VueRouter);
-
-export default new VueRouter({
+const router = new VueRouter({
     mode:"history",
     routes:[
         {path:"/basetable", component:BaseTable},
         {path:"/baselayout", component:BaseLayout},
         {path:"/texteditor", component:TextEditor},
         {path:"/mdeditor", component:MarkdownEditor},
-        {path:"/form", component:FormDemo}
-    ]
-})
+        {path:"/form", component:FormDemo},
+        {path:"/home", component:Home}
+    ],
+});
+
+export default router;
+

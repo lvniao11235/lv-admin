@@ -13,12 +13,12 @@ Vue.use(ElementUI, {
 });
 new Vue({
   render: h => h(App),
-  store,
-  router,
   provide:function(){
     return {
       menuEventBus:new Vue(),
       tabEventBus:new Vue()
     }
-  }
+  },
+  store,
+  router
 }).$mount('#app')
