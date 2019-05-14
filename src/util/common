@@ -1,0 +1,17 @@
+function _findMenuItemByAddr(menus, addr){
+    for(var i=0; i<menus.length; i++){
+        if(menus[i].addr && menus[i].addr == addr){
+            return menus[i];
+        } else if (menus[i].items && menus[i].items.length > 0){
+            var res = findMenuItemByAddr(menus[i].items, addr);
+            if(res){
+                return res;
+            }
+        }
+    }
+    return null;
+}
+
+const findMenuItemByAddr = _findMenuItemByAddr;
+
+export {findMenuItemByAddr};

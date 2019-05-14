@@ -54,14 +54,19 @@ export default{
             this.currentItem = {};
             this.items = [];
             event.cancelBubble = true;
+            if(this.items.length == 0){
+                this.tabEventBus.$emit('openNewTab', {addr:"/home", title:"首页"});
+            }
         },
         closeOther(event){
-            if(this.items && this.hasOwnProperty('length') && this.itmes.length != 0){
+            if(this.items && this.items.hasOwnProperty('length') && this.items.length != 0){
                 this.items = [this.currentItem];
                 this.setCurrentItem(this.currentItem);
                 event.cancelBubble = true;
             }
-            
+            if(this.items.length == 0){
+                this.tabEventBus.$emit('openNewTab', {addr:"/home", title:"首页"});
+            }
         },
         setCurrentItem(item){
             this.currentItem = item;
@@ -150,7 +155,7 @@ export default{
     height:32px;
     position:absolute;
     right:5px;
-    top:9px;
+    top:5px;
     border-radius:5px;
 }
 

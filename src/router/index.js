@@ -16,7 +16,8 @@ const router = new VueRouter({
         {path:"/texteditor", component:TextEditor},
         {path:"/mdeditor", component:MarkdownEditor},
         {path:"/form", component:FormDemo},
-        {path:"/home", component:Home}
+        {path:"/home", component:Home},
+        {path:"/", redirect:"/home"}
     ],
 });
 
