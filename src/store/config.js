@@ -25,7 +25,9 @@ export default{
             {icon:'fa fa-cogs', title:'表单', addr:'/form'}
           ],
         links:[
-            {addr:"/home", title:"首页"}
+            {addr:"/home", title:"首页"},
+            {addr:"/taskdetail/:id", title:"任务详情"},
+            {addr:"/user/profile", title:"用户信息"}
         ]
     },
     mutations:{

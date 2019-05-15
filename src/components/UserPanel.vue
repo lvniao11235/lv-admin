@@ -9,7 +9,7 @@
         </div>
     </div>
     <div class="lv-user-panel-btns">
-        <div>profile</div>
+        <div @click="userProfile">profile</div>
         <div>logout</div>
     </div>
 </div>
@@ -17,7 +17,12 @@
 
 <script>
 export default{
-
+    methods:{
+        userProfile(){
+            this.tabEventBus.$emit('openNewTab', {addr:"/user/profile", title:"用户信息"});
+        }
+    },
+    inject:["tabEventBus"],
 }
 </script>
 

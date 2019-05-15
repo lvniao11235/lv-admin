@@ -2,7 +2,7 @@
 <div class="lv-function-panel-item-content lv-task-panel">
     <div class="lv-task-panel-title">Your task list</div>
     <div class="lv-task-panel-items">
-        <div class="lv-task-panel-item">
+        <div class="lv-task-panel-item" @click="selectTask(1)">
             <div class="lv-task-panel-item-info">
                 <div class="lv-task-name">design some button</div>
                 <div class="lv-task-percent">20%</div>
@@ -13,7 +13,7 @@
                 </div>
             </div>
         </div>
-        <div class="lv-task-panel-item">
+        <div class="lv-task-panel-item"  @click="selectTask(2)">
             <div class="lv-task-panel-item-info">
                 <div class="lv-task-name">design some button</div>
                 <div class="lv-task-percent">50%</div>
@@ -54,7 +54,21 @@
 </template>
 
 <script>
+import { clone } from '../util/common.js'
 export default{
+    data:function(){
+        return{
+            detailaddr:"/taskdetail/",
+            detail:{title:"任务详情"}
+        }
+    },
+    methods:{
+        selectTask(id){
+            this.detail.addr = this.detailaddr + id;
+            this.tabEventBus.$emit('openNewTab', clone(this.detail));
+        }
+    },
+    inject:["tabEventBus"],
 }
 </script>
 

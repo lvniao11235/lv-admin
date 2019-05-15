@@ -7,6 +7,8 @@ import MarkdownEditor from "../page/MarkdownEditor";
 import TextEditor from "../page/TextEditor";
 import FormDemo from "../page/FormDemo.vue";
 import Home from "../page/Home";
+import TaskDetail from "../page/TaskDetail";
+import UserProfile from "../page/UserProfile";
 Vue.use(VueRouter);
 const router = new VueRouter({
     mode:"history",
@@ -17,7 +19,9 @@ const router = new VueRouter({
         {path:"/mdeditor", component:MarkdownEditor},
         {path:"/form", component:FormDemo},
         {path:"/home", component:Home},
-        {path:"/", redirect:"/home"}
+        {path:"/", redirect:"/home"},
+        {path:"/taskdetail/:id", component:TaskDetail},
+        {path:"/user/profile", component:UserProfile}
     ],
 });
 

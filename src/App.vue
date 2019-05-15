@@ -18,7 +18,7 @@ import LeftSection from './components/LeftSection'
 import CenterSection from './components/CenterSection'
 import LMenu from './components/LMenu'
 import { mapState} from "vuex"
-import { findMenuItemByAddr } from './util/common'
+import { findMenuItemByAddr, findLinkByAddr } from './util/common.js'
 export default {
   name: 'app',
   data:function(){
@@ -43,18 +43,16 @@ export default {
   },
   inject:["tabEventBus"],
   mounted(){
-      var item = findMenuItemByAddr(this.items, this.$route.path);
-      if(item){
-        this.tabEventBus.$emit('openNewTab', item);
+      var item = findMenuItemByAddr(this.items, this.$route.fullPath);
+      if(!item){
+        item = findLinkByAddr(this.links, this.$route.fullPath);
       }
-      else 
-      {
-        for(var i=0; i<this.links.length; i++){
-          if(this.links[i].addr == this.$route.path){
-            this.tabEventBus.$emit('openNewTab', this.links[i]);
-            break;
-          }
-        }
+      if(item){
+        var newitem = {};
+        newitem.title = item.title;
+        newitem.icon = item.icon;
+        newitem.addr = this.$route.fullPath;
+        this.tabEventBus.$emit('openNewTab', newitem);
       }
   }
 }
