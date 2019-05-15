@@ -9,6 +9,7 @@ import FormDemo from "../page/FormDemo.vue";
 import Home from "../page/Home";
 import TaskDetail from "../page/TaskDetail";
 import UserProfile from "../page/UserProfile";
+import UserLogout from "../page/UserLogout";
 Vue.use(VueRouter);
 const router = new VueRouter({
     mode:"history",
@@ -21,7 +22,8 @@ const router = new VueRouter({
         {path:"/home", component:Home},
         {path:"/", redirect:"/home"},
         {path:"/taskdetail/:id", component:TaskDetail},
-        {path:"/user/profile", component:UserProfile}
+        {path:"/user/profile", component:UserProfile},
+        {path:"/user/profile", component:UserLogout}
     ],
 });
 

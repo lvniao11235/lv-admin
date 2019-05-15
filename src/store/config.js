@@ -27,7 +27,8 @@ export default{
         links:[
             {addr:"/home", title:"首页"},
             {addr:"/taskdetail/:id", title:"任务详情"},
-            {addr:"/user/profile", title:"用户信息"}
+            {addr:"/user/profile", title:"用户信息"},
+            {addr:"/user/logout", title:"退出"}
         ]
     },
     mutations:{

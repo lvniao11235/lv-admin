@@ -6,9 +6,17 @@ const clone = _clone;
 
 function equalAddr(addr1, addr2){
     if(addr1 == addr2) return true;
-    var prefix1 = addr1.substr(0, addr1.lastIndexOf("/"));
-    var prefix2 = addr2.substr(0, addr2.lastIndexOf("/"));
-    return prefix1 == prefix2;
+    if(addr1.indexOf(":") > -1){
+        var prefix1 = addr1.substr(0, addr1.lastIndexOf("/"));
+        var prefix2 = addr2.substr(0, addr2.lastIndexOf("/"));
+        return prefix1 == prefix2;
+    }
+    if(addr1.indexOf("?") > -1 && addr2.contains("?") > -1){
+        prefix1 = addr1.substr(0, addr1.lastIndexOf("?"));
+        prefix2 = addr2.substr(0, addr2.lastIndexOf("?"));
+        return prefix1 == prefix2;
+    }
+    return false;
 }
 
 function _findMenuItemByAddr(menus, addr){
